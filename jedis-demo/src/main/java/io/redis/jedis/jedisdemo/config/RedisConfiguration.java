@@ -9,6 +9,7 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.util.StringUtils;
 
 @Configuration
 public class RedisConfiguration {
@@ -47,7 +48,7 @@ public class RedisConfiguration {
 	public JedisConnectionFactory getJedisConnectionFactory() {
 		RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
 		redisStandaloneConfiguration.setHostName(host);
-		if (password.isEmpty()) {
+		if (!StringUtils.isEmpty(password)) {
 			redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
 		}
 		redisStandaloneConfiguration.setPort(port);

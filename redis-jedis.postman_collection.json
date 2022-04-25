@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "2053b32a-7ca5-454d-a60f-dbd36c775992",
+		"name": "udemy-redis-jedis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddProgrammerAsString",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"name\" : \"Jordan\",\r\n    \"company\" : \"sdk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/programmer-string",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"programmer-string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProgrammerAsString",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/programmer-string/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"programmer-string",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
